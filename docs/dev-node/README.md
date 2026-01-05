@@ -14,6 +14,10 @@ Make sure you have the following installed on your development machine:
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - [VS Code](https://code.visualstudio.com/download)
 - [Node.js](https://nodejs.org/en/download) version 24 or higher
+  - Make sure you select "Automatically install the necessary tools" during installation on Windows
+  ![Node.js installer screenshot](./automatic-install.png)
+- [Docker](https://docs.docker.com/get-docker/) (optional, but recommended for
+  consistency)
 
 ## Getting Started
 
