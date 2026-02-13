@@ -15,12 +15,13 @@ Before you begin, ensure complete the following steps:
 
 - [Install Docker](https://docs.docker.com/get-docker/)
 - Create a free account on [Docker Hub](https://hub.docker.com/)
-- Create a [Personal Access Token](https://docs.docker.com/docker-hub/access-tokens/)
+- Create a Docker Hub [Personal Access Token](https://docs.docker.com/docker-hub/access-tokens/)
 
-## Step 1: Create an AWS EC2 Instance
+## Step 1: Ensure Your EC2 running
 
-- [Launch an EC2 Instance](EC2launch/README.md)
-- [SSH into your EC2 Instance](EC2ssh/README.md)
+You should have received an email from your instructor with a link to a Google
+Drive folder containing instructions. Follow those instructions to ensure your
+EC2 instance is running and accessible with the provided bash script.
 
 ## Step 2: Create a new .env File
 
@@ -28,17 +29,10 @@ Before you configure your project make sure you have following:
 
 - Your Docker Hub username
 - Your Docker Hub Personal Access Token
-- Your AWS EC2 **Public DNS** which you can find in the AWS EC2 Management Console
-![EC2 Public DNS](EC2_public_dns.png)
-- Your AWS EC2 SSH Key File (.pem) which you downloaded when creating your EC2 instance
-- Copy your AWS EC2 SSH Key File (.pem) to your home `~/.ssh/` directory
+- Your AWS EC2 **Public DNS** which you can find in the instructions emailed to you.
 
-
-**IMPORTANT:** NEVER commit your `.pem` file to version
-control. It should be ignored by your `.gitignore` file. If you accidentally
-commit it, immediately delete the file from your repository, terminate your
-EC2 instance and email your instructor to let them know your credentials may
-have been compromised so they can make check to ensure your instance is secure.
+>[!WARNING]
+>Do not commit your `.env` file to version control, or any `.pem` files containing your SSH keys. These files contain sensitive information that should not be shared publicly. If you accidentally commit these files, email your instructor immediately so they can be revoked and replaced.
 
 Create a new configuration:
 ```bash
