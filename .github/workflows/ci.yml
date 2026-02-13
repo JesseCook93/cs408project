@@ -6,6 +6,12 @@ on:
   pull_request:
     branches: [ "main" ]
   workflow_call:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Option for Manual Running of CI'
+        required: true
+        default: 'Testing'
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
