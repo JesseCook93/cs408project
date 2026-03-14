@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home (landing) page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Hello World!' });
+  res.render('landing', { title: 'Welcome to Boards!', description: 'Share anything you wish with your local community or group.With your own instance of Boards, you can share anything you wish with your local community or group. Simply sharae this with whoever you wish, and hit "Get Started" to begin posting!'});
 });
 
 /* GET news page. */
