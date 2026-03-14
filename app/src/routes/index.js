@@ -8,17 +8,17 @@ router.get('/', function(req, res, next) {
 
 /* GET news page. */
 router.get('/news', function(req, res, next) {
-  res.render('news', { title: 'News' });
+  res.render('news', { title: 'News', description: 'Placeholder (Will be removed in future checkpoints)' });
 });
 
 /* GET post page. */
 router.get('/post', function(req, res, next) {
-  res.render('post', { title: 'Post' });
+  res.render('post', { title: 'Post', description: 'Placeholder (Will be removed in future checkpoints)' });
 });
 
 /* GET details page. */
 router.get('/postdetails', function(req, res, next) {
-  res.render('postdetails', { title: 'Title' });
+  res.render('postdetails', { title: 'Title', description: 'Placeholder (Will be removed in future checkpoints)' });
 });
 
 module.exports = router;
