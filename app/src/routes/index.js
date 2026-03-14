@@ -5,4 +5,20 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Hello World!' });
 });
+
+/* GET news page. */
+router.get('/news', function(req, res, next) {
+  res.render('news', { title: 'News' });
+});
+
+/* GET post page. */
+router.get('/post', function(req, res, next) {
+  res.render('post', { title: 'Post' });
+});
+
+/* GET details page. */
+router.get('/details', function(req, res, next) {
+  res.render('details', { title: 'Details' });
+});
+
 module.exports = router;
