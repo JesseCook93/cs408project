@@ -1,16 +1,9 @@
 import { test, expect } from '@playwright/test';
 
-
-
 test.describe('Landing Page', () => {
-
   test('should display landing page', async ({ page }) => {
     await page.goto('/');
-    await expect(page).toHaveTitle(/Hello World!/);
-    await expect(page.locator('p')).toContainText('GitHub Repository: https://github.com/JesseCook93/cs408project');
-
+    await expect(page).toHaveTitle(/Welcome to Boards!/);
+    await expect(page.locator('p')).toContainText('Share anything you wish with your local community or group. With your own instance of Boards, you can share anything you wish with your local community or group. Simply share this with whoever you wish, and hit "Get Started" to begin posting!');
   });
-
-
-
 });
