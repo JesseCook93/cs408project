@@ -17,8 +17,8 @@ router.get('/post', function(req, res, next) {
 });
 
 /* GET details page. */
-router.get('/details', function(req, res, next) {
-  res.render('details', { title: 'Details' });
+router.get('/postdetails', function(req, res, next) {
+  res.render('postdetails', { title: 'Title' });
 });
 
 module.exports = router;
