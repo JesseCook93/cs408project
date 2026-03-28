@@ -5,6 +5,19 @@
         <h1 class="display-4 text-black mb-3"><%= title %></h1>
         <p class="text-black-50"><%= description %></p>
       </div>
+      <div class="row">
+        <% news.forEach(function(item) { %>
+          <div class="col-md-6 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title"><%= item.title %></h5>
+                <h6 class="card-subtitle mb-2 text-muted"><%= item.poster %></h6>
+                <p class="card-text"><%= new Date(item.date).toLocaleDateString() %></p>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
     </div>
   </div>
 </div>
