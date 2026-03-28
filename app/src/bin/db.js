@@ -34,8 +34,7 @@ function createDatabaseManager(dbPath) {
       },
 
       // Updated to seed db with news data based on wireframes
-      seedTestData: () => {
-        if (process.env.NODE_ENV === 'test') {
+      seedInitialData: () => {
           ensureConnected();
           const insert = database.prepare('INSERT INTO news (title, poster, details) VALUES (?, ?, ?)');
           const testData = [
@@ -47,9 +46,6 @@ function createDatabaseManager(dbPath) {
           });
           insertMany(testData);
           console.log('Seeding test data into database');
-        } else {
-          console.warn('seedTestData called outside of test environment. FIXME!');
-
         }
       },
 
@@ -81,7 +77,6 @@ function createDatabaseManager(dbPath) {
       },
     }
   };
-}
 
 
 module.exports = {
