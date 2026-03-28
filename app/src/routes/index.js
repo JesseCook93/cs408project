@@ -8,7 +8,8 @@ router.get('/', function(req, res, next) {
 
 /* GET news page. */
 router.get('/news', function(req, res, next) {
-  res.render('news', { title: 'News', description: 'Placeholder (Will be removed in future checkpoints)' });
+  const newsPosts = req.db.getAllNews();
+  res.render('news', { title: 'News', description: '', news: newsPosts });
 });
 
 /* GET post page. */
