@@ -57,6 +57,10 @@ function createDatabaseManager(dbPath) {
         return database.prepare('SELECT * FROM news ORDER BY date DESC').all();
       },
 
+      getRecentNews: () => {
+        return database.prepare('SELECT * FROM news ORDER BY date DESC').limit(10).all();
+      },
+
       getNewsById: (id) => {
         return database.prepare('SELECT * FROM news WHERE id = ?').get(id);
       },
