@@ -15,7 +15,16 @@ function createDatabaseManager(dbPath) {
   console.log('Database manager created for:', dbPath);
   database.pragma('foreign_keys = ON');
   database.exec(createNewsTableSQL);
-  database.NODE_ENV = 'test'; // Set the environment to 'test' for seeding test data
+  database.exec('DELETE FROM news'); // Clear existing data to avoid duplicates on restart
+  const insert = database.prepare('INSERT INTO news (title, poster, details) VALUES (?, ?, ?)'); // 19-27: seed with initial data based on wireframes
+  const testData = [
+    { title: 'Lemonade Stand!', poster: 'Jesse', details: '1st news item.' },
+    { title: 'Road Accident', poster: 'Dylan', details: '2nd news item.' }
+  ];
+  const insertMany = database.transaction((news) => {
+    for (const newsPost of news) insert.run(newsPost.title, newsPost.poster, newsPost.details);
+  });
+  insertMany(testData);
 
   function ensureConnected() {
     if (!database.open) {
@@ -48,9 +57,6 @@ function createDatabaseManager(dbPath) {
           });
           insertMany(testData);
           console.log('Seeding test data into database');
-        } else {
-          console.warn('seedTestData called outside of test environment. FIXME!');
-
         }
       },
 
