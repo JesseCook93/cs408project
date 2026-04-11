@@ -66,3 +66,14 @@ footer .footer-text {
 a {
   color: #00B7FF;
 }
+
+.table-header { 
+  font-weight: bold; 
+  font-size: 2em; 
+  font-family: 'Arial', sans-serif; 
+}
+
+.table-row {
+  background-color: #95d3ff !important;
+  border-color: #95d3ff !important;
+}

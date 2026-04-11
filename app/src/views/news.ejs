@@ -1,22 +1,39 @@
 <div class="container py-5">
   <div class="row justify-content-center">
     <div class="col-lg-10">
-      <div class="text-center mb-5">
-        <h1 class="display-4 text-black mb-3"><%= title %></h1>
+      <div class="text-left mb-5">
+        <h1 class="display-4 text-white mb-3"><%= title %></h1>
         <p class="text-black-50"><%= description %></p>
       </div>
-      <div class="row">
-        <% news.forEach(function(item) { %>
-          <div class="col-md-6 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <h5 class="card-title"><%= item.title %></h5>
-                <h6 class="card-subtitle mb-2 text-muted"><%= item.poster %></h6>
-                <p class="card-text"><%= new Date(item.date).toLocaleDateString() %></p>
-              </div>
-            </div>
-          </div>
-        <% }); %>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th class="table-header">Title</th>
+              <th class="table-header">Poster</th>
+              <th class="table-header">Date</th>
+              <th class="table-header">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% news.forEach(function(item) { %>
+              <tr>
+                <td class="table-row">
+                  <%= item.title %>
+                </td>
+                <td class="table-row">
+                  <%= item.poster %>
+                </td>
+                <td class="table-row">
+                  <%= new Date(item.date).toLocaleDateString() %>
+                </td>
+                <td class="table-row">
+                  <a href="#" class="btn btn-light btn-sm" disabled>Coming Soon</a>
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
