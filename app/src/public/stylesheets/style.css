@@ -77,3 +77,8 @@ a {
   background-color: #95d3ff !important;
   border-color: #95d3ff !important;
 }
+
+.post-sub-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}

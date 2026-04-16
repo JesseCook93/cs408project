@@ -28,7 +28,7 @@
                   <%= new Date(item.date).toLocaleDateString() %>
                 </td>
                 <td class="table-row">
-                  <a href="#" class="btn btn-light btn-sm" disabled>Coming Soon</a>
+                  <a href="/postdetails/<%= item.id %>" class="btn btn-light btn-sm">View</a>
                 </td>
               </tr>
             <% }); %>

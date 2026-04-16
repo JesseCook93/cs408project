@@ -14,8 +14,8 @@ function createDatabaseManager(dbPath) {
   const database = new Database(dbPath);
   console.log('Database manager created for:', dbPath);
   database.pragma('foreign_keys = ON');
+  database.exec('DROP TABLE IF EXISTS news'); // Clear existing data to avoid duplicates on restart
   database.exec(createNewsTableSQL);
-  database.exec('DELETE FROM news'); // Clear existing data to avoid duplicates on restart
   const insert = database.prepare('INSERT INTO news (title, poster, details) VALUES (?, ?, ?)'); // 19-27: seed with initial data based on wireframes
   const testData = [
     { title: 'Lemonade Stand!', poster: 'Jesse', details: '1st news item.' },

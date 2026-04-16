@@ -1,9 +1,15 @@
 <div class="container py-5">
   <div class="row justify-content-center">
     <div class="col-lg-10">
-      <div class="text-center mb-5">
-        <h1 class="display-4 text-black mb-3"><%= title %></h1>
-        <p class="text-black-50"><%= description %></p>
+      <div class="text-left mb-4">
+        <h1 class="display-4 text-white mb-3" style="border-bottom: 2px solid white; padding-bottom: 10px;"><%= newsItem.title %></h1>
+        <div class="d-flex justify-content-between align-items-center mt-2">
+          <span class="text-white post-sub-title">By <%= newsItem.poster %></span>
+          <span class="text-white post-sub-title">Posted <%= new Date(newsItem.date).toLocaleDateString() %></span>
+        </div>
+      </div>
+      <div class="bg-white text-dark p-4 rounded" style="max-height: 400px; overflow-y: auto;">
+        <p class="mb-0"><%= newsItem.details %></p>
       </div>
     </div>
   </div>

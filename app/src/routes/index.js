@@ -18,8 +18,13 @@ router.get('/post', function(req, res, next) {
 });
 
 /* GET postdetails page. */
-router.get('/postdetails', function(req, res, next) {
-  res.render('postdetails', { title: 'Title', description: 'Placeholder (Will be removed in future checkpoints)' });
+router.get('/postdetails/:id', function(req, res, next) {
+  const newsId = req.params.id;
+  const newsItem = req.db.getNewsById(newsId);
+  if (!newsItem) {
+    return res.status(404).render('error', { title: 'Not Found', message: 'News item not found' });
+  }
+  res.render('postdetails', { title: newsItem.title, description: '', newsItem: newsItem });
 });
 
 module.exports = router;
