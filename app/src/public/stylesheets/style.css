@@ -82,3 +82,11 @@ a {
   font-size: 1.5em;
   font-weight: bold;
 }
+
+.delete-icon {
+  width: 16px;
+  height: 16px;
+  transform: scale(4);
+  margin-left: 5px;
+  margin-bottom: 2px;
+}

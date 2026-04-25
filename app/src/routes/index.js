@@ -12,6 +12,12 @@ router.get('/news', function(req, res, next) {
   res.render('news', { title: 'News', description: '', news: newsPosts });
 });
 
+router.post('/news/delete/:id', function(req, res, next) {
+  const newsId = req.params.id;
+  req.db.deleteNews(newsId);
+  res.redirect('/news');
+});
+
 /* GET post page. */
 router.get('/post', function(req, res, next) {
   res.render('post', { title: 'Post', description: 'Placeholder (Will be removed in future checkpoints)' });
