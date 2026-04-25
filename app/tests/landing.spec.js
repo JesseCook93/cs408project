@@ -10,7 +10,7 @@ test.describe('Landing Page', () => {
 });
 
 test.describe('Header', () => {
-  test('should have working navigation links', async ({ page }) => {
+  test('should have working header button links', async ({ page }) => {
     await page.goto('/');
     await expect(page.getByRole('link', { name: 'Boards'})).toBeVisible();
     await expect(page.getByRole('link', { name: 'News'})).toBeVisible();
