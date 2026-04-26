@@ -28,7 +28,16 @@
                   <%= new Date(item.date).toLocaleDateString() %>
                 </td>
                 <td class="table-row">
-                  <a href="/postdetails/<%= item.id %>" class="btn btn-light btn-sm">View</a>
+                  <form method="POST" action="/news/delete/<%= item.id %>" onsubmit="return confirm('Delete the post \'<%= item.title %>\' ?');">
+                    <a href="/postdetails/<%= item.id %>" class="btn btn-light btn-sm">View</a>
+                    <button type="submit" class="btn btn-light btn-sm">
+                      Delete
+                      <img
+                        src="/images/delete.png"
+                        alt="Delete"
+                        class="delete-icon"
+                      /></button>
+                  </form>
                 </td>
               </tr>
             <% }); %>
