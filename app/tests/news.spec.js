@@ -1,7 +1,15 @@
 import { test, expect } from '@playwright/test';
 
+
 // Tests for the news page
 test.describe('News Page', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/news');
+    const dbHelpers = page.evaluate(() => window.dbHelpers);
+    await dbHelpers.clearDatabase();
+    await dbHelpers.seedTestData();
+  });
+
   test('should display news page', async ({ page }) => {
     await page.goto('/news');
     await expect(page).toHaveTitle(/News/);

@@ -1,9 +1,32 @@
 <div class="container py-5">
   <div class="row justify-content-center">
     <div class="col-lg-10">
-      <div class="text-center mb-5">
-        <h1 class="display-4 text-black mb-3"><%= title %></h1>
-        <p class="text-black-50"><%= description %></p>
+      <div class="text-left mb-5">
+        <h1 class="display-4 text-white mb-3" style="border-bottom: 2px solid white; padding-bottom: 10px;"><%= title %></h1>
+        <div class="flex-container">
+          <div class="container-one">
+            <label class="submission-field-title" for="title">Title:</label>
+            <label class="submission-field-title" for="name">Name:</label>
+            <label class="submission-field-title" for="details">Details:</label>
+          </div>
+          <div class="container-two">
+            <form action="/post" method="POST">
+              <div class="vertical-form">
+                <input class="submission-text-field" type="text" id="title" name="title" maxlength="20" placeholder="Your title here..." required>
+                <input class="submission-text-field" type="text" id="poster" name="poster" maxlength="20" placeholder="Your name here..." required>
+                <textarea class="submission-text-area" id="details" name="details" maxlength="2000" placeholder="Enter details here..." required></textarea>
+              </div>
+              <div class="post-submission-button-container">
+                <img
+                        src="/images/send.png"
+                        alt="send"
+                        class="send-icon"
+                      />
+                <button class="post-submission-button" type="submit">Post!</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>
