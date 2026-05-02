@@ -11,21 +11,21 @@ header {
 }
 
 .homebutton {
-  font-size: 1rem;
-  padding: 0.75rem 15rem;
+  font-size: clamp(14px, 2vw, 24px);
+  padding: clamp(8px, 1.5vw, 20px) clamp(48px, 4vw, 200px);
   margin-right: auto;
 }
 
 .otherbuttons:nth-child(2) {
-  font-size: 1rem;
-  padding: 0.75rem 5rem;
-  margin-left: 150px;
-  margin-right: 150px;
+  font-size: clamp(14px, 2vw, 24px);
+  padding: clamp(8px, 1.5vw, 20px) clamp(32px, 3vw, 100px);
+  margin-left: clamp(20px, 7vw, 300px);
 }
 
 .otherbuttons:nth-child(3) {
-  font-size: 1rem;
-  padding: 0.75rem 5rem;
+  font-size: clamp(14px, 2vw, 24px);
+  padding: clamp(8px, 1.5vw, 20px) clamp(32px, 3vw, 100px);
+  margin-left: clamp(20px, 15.3vw, 400px);
 }
 
 .nav-buttons {
