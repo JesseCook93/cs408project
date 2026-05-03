@@ -2,7 +2,7 @@
 
 A full-stack web application for creating and sharing posts with your own community. It is made to be simple to use for both users to use and developers to deploy and manage. The purpose of this is to give any community the ability to share information with each other online. This was built for CS408 in Spring 2026.
 
-## Usage
+## Functionality
 Implemented Features:
 - Supports viewing and creating any post one wishes for others
 - Displays the most recent posts/news
