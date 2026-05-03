@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 
+
 // Tests for the news page
 test.describe('News Page', () => {
   test('should display news page', async ({ page }) => {

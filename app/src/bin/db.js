@@ -65,7 +65,7 @@ function createDatabaseManager(dbPath) {
       },
 
       getRecentNews: () => {
-        return database.prepare('SELECT * FROM news ORDER BY date DESC').limit(10).all();
+        return database.prepare('SELECT * FROM news ORDER BY date DESC LIMIT 10').all();
       },
 
       getNewsById: (id) => {
